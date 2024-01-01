@@ -6,7 +6,12 @@ export const Loader = () => {
       <div className="w-7 h-7 relative animate-bounce">
         <Image src="/favicon.ico" alt="logo" fill />
       </div>
-      <p className="text-sm text-muted-foreground">Realise is thinking...</p>
+      <p className="text-sm text-muted-foreground inline">
+        Realize is thinking
+        <span className="inline animate-ping">.</span>
+        <span className="inline animate-ping delay-100">.</span>
+        <span className="inline animate-ping delay-200">.</span>
+      </p>
     </div>
   );
 };
