@@ -8,7 +8,8 @@ Realize is an AI platform that offers a variety of interactive features. It allo
 ## Demo
 <br />
 
-[![Realize](https://github.com/MohamedAbirou/Realize/assets/109366637/e8592b2e-9a14-45bc-8da8-0e115f3c65f2)]()
+[![Realize](https://github.com/MohamedAbirou/Realize/assets/109366637/318884e8-e0e0-451a-ae54-2642628ee0ad)]()
+
 
 
 <br />
