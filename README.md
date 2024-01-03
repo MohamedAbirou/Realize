@@ -20,7 +20,7 @@ Realize is an AI platform that offers a variety of interactive features. It allo
 
 - Tailwind animations and effects
 - Full responsiveness
-- Authentication (Email, Google, 9+ Social Logins)
+- Authentication (Email, Google, Facebook, Apple)
 - Client form validation and handling
 - Server error handling
 - Image Generation Tool
