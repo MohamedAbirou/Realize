@@ -10,9 +10,13 @@ import { useProModal } from "@/hooks/use-pro-modal";
 
 interface FreeCounterProps {
   apiLimitCount: number;
+  isPro: boolean;
 }
 
-const FreeCounter = ({ apiLimitCount = 0 }: FreeCounterProps) => {
+const FreeCounter = ({
+  apiLimitCount = 0,
+  isPro = false,
+}: FreeCounterProps) => {
   const { onOpen } = useProModal();
   const [isMounted, setIsMounted] = useState(false);
 
@@ -21,6 +25,10 @@ const FreeCounter = ({ apiLimitCount = 0 }: FreeCounterProps) => {
   }, []);
 
   if (!isMounted) {
+    return null;
+  }
+
+  if (isPro) {
     return null;
   }
 

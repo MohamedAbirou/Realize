@@ -3,9 +3,11 @@ import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import Sidebar from "./sidebar";
 import { getApiLimitCount } from "@/lib/api-limit";
+import { checkSubscription } from "@/lib/subscription";
 
 const MobileSidebar = async () => {
   const apiLimitCount = await getApiLimitCount();
+  const isPro = await checkSubscription();
 
   return (
     <Sheet>
@@ -15,7 +17,7 @@ const MobileSidebar = async () => {
         </Button>
       </SheetTrigger>
       <SheetContent side="left" className="p-0">
-        <Sidebar apiLimitCount={apiLimitCount} />
+        <Sidebar isPro={isPro} apiLimitCount={apiLimitCount} />
       </SheetContent>
     </Sheet>
   );
