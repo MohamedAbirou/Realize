@@ -1,6 +1,10 @@
 import { Menu } from "lucide-react";
-import { Button } from "./ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
+import { Button } from "../../../../components/ui/button";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+} from "../../../../components/ui/sheet";
 import Sidebar from "./sidebar";
 import { getApiLimitCount } from "@/lib/api-limit";
 import { checkSubscription } from "@/lib/subscription";

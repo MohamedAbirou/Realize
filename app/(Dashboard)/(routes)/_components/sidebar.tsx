@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import FreeCounter from "./free-counter";
+import FreeCounter from "../../../../components/free-counter";
 import { routes } from "@/contants";
 
 interface SidebarProps {

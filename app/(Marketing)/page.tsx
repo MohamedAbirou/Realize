@@ -1,18 +1,13 @@
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { MarketingContent } from "@/app/(Marketing)/_components/marketing-content";
+import { MarketingHero } from "@/app/(Marketing)/_components/marketing-hero";
+import { MarketingNavbar } from "@/app/(Marketing)/_components/marketing-navbar";
 
 const MarketingPage = () => {
   return (
-    <div>
-      Landing page
-      <div>
-        <Link href="/sign-in">
-          <Button>Login</Button>
-        </Link>
-        <Link href="/sign-up">
-          <Button>Register</Button>
-        </Link>
-      </div>
+    <div className="h-full">
+      <MarketingNavbar />
+      <MarketingHero />
+      <MarketingContent />
     </div>
   );
 };
