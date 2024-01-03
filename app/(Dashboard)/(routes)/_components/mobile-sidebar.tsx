@@ -1,3 +1,4 @@
+"use client";
 import { Menu } from "lucide-react";
 import { Button } from "../../../../components/ui/button";
 import {
@@ -6,12 +7,26 @@ import {
   SheetTrigger,
 } from "../../../../components/ui/sheet";
 import Sidebar from "./sidebar";
-import { getApiLimitCount } from "@/lib/api-limit";
-import { checkSubscription } from "@/lib/subscription";
+import { useEffect, useState } from "react";
 
-const MobileSidebar = async () => {
-  const apiLimitCount = await getApiLimitCount();
-  const isPro = await checkSubscription();
+interface MobileSidebarProps {
+  apiLimitCount: number;
+  isPro: boolean;
+}
+
+const MobileSidebar = ({
+  apiLimitCount = 0,
+  isPro = false,
+}: MobileSidebarProps) => {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return null;
+  }
 
   return (
     <Sheet>
