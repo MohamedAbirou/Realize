@@ -15,6 +15,7 @@ import { Check, Loader, Zap } from "lucide-react";
 import { Button } from "../ui/button";
 import axios from "axios";
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 const ProModal = () => {
   const { isOpen, onClose } = useProModal();
@@ -28,7 +29,7 @@ const ProModal = () => {
 
       window.location.href = response.data.url;
     } catch (error) {
-      console.log(error, "STRIPE_CLIENT_ERROR");
+      toast.error("Something went wrong!");
     } finally {
       setIsLoading(false);
     }
