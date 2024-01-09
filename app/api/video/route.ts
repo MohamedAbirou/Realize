@@ -8,11 +8,6 @@ const replicate = new Replicate({
   auth: process.env.REPLICATE_API_TOKEN!,
 });
 
-const positivePrompt =
-  "Exquisite footage of clownfish gracefully navigating through a vibrant coral reef ecosystem, captured in ultra-high-definition 8K resolution. The video quality is impeccable, worthy of a National Geographic award.";
-const negativePrompt =
-  "Avoid footage that appears overly saturated with blue hues, contains visible dust particles, or has excessive noise. The video should not look washed out, visually unappealing, distorted, or exhibit signs of damage.";
-
 export async function POST(req: Request) {
   try {
     const { userId } = auth();
@@ -39,10 +34,6 @@ export async function POST(req: Request) {
       {
         input: {
           prompt,
-          instruction: {
-            positive: positivePrompt,
-            negative: negativePrompt,
-          },
         },
       }
     );
