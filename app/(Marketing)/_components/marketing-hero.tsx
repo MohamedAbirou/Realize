@@ -16,7 +16,7 @@ export const MarketingHero = () => {
             options={{
               strings: [
                 "Chatbot.",
-                "Photo Generatioon.",
+                "Photo Generation.",
                 "Music Generation.",
                 "Code Generation.",
                 "Video Generation.",
