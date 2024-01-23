@@ -24,6 +24,7 @@ import { Card, CardFooter } from "@/components/ui/card";
 import Image from "next/image";
 import { useProModal } from "@/hooks/use-pro-modal";
 import toast from "react-hot-toast";
+import { getRandomPrompt } from "@/lib/utils";
 
 const ImagePage = () => {
   const { onOpen } = useProModal();
@@ -60,6 +61,11 @@ const ImagePage = () => {
     } finally {
       router.refresh();
     }
+  };
+
+  const handleSurpriseMe = () => {
+    const randomPrompt = getRandomPrompt(form.getValues("prompt"));
+    form.setValue("prompt", randomPrompt);
   };
 
   return (
@@ -148,7 +154,15 @@ const ImagePage = () => {
                 )}
               />
               <Button
-                className="col-span-12 lg:col-span-2 w-full"
+                type="button"
+                onClick={handleSurpriseMe}
+                className="col-span-12 lg:col-span-1 w-full"
+                disabled={isLoading}
+              >
+                Surprise me
+              </Button>
+              <Button
+                className="col-span-12 lg:col-span-1 w-full"
                 disabled={isLoading}
               >
                 {isLoading ? (

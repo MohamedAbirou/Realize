@@ -48,6 +48,12 @@ export const routes = [
     color: "text-green-700",
   },
   {
+    label: "Music Lyrics Generation",
+    icon: Music,
+    href: "/lyrics",
+    color: "text-emerald-500",
+  },
+  {
     label: "Settings",
     icon: Settings,
     href: "/settings",

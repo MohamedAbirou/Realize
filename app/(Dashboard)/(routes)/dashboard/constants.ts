@@ -36,4 +36,10 @@ export const tools = [
     bgColor: "bg-green-700/10",
     href: "/code",
   },
+  {
+    label: "Music Lyrics Generation",
+    icon: Music,
+    href: "/lyrics",
+    color: "text-emerald-500",
+  },
 ];

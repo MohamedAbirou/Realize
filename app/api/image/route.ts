@@ -1,8 +1,10 @@
 import { checkApiLimit, increaseApiLimit } from "@/lib/api-limit";
+import { storage } from "@/lib/firebaseConfig";
 import { checkSubscription } from "@/lib/subscription";
 import { auth } from "@clerk/nextjs";
 import { NextResponse } from "next/server";
 import OpenAI from "openai";
+import { ref, uploadString } from "firebase/storage";
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
@@ -44,14 +46,24 @@ export async function POST(req: Request) {
     }
 
     const res = await openai.images.generate({
+      model: "dall-e-2",
       prompt,
       n: parseInt(amount, 10),
       size: resolution,
+      quality: "hd",
+      style: "natural",
     });
 
     if (!isPro) {
       await increaseApiLimit();
     }
+
+    // Store the generated data in Firebase Storage
+    const storageRef = ref(
+      storage,
+      `generatedImages/${userId}-${Date.now()}.json`
+    );
+    await uploadString(storageRef, JSON.stringify(res.data), "raw");
 
     return NextResponse.json(res.data);
   } catch (error) {
